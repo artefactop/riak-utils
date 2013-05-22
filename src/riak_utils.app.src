@@ -1,0 +1,15 @@
+{application, riak_utils,
+ [
+  {description, "Some utils function for work with riakc"},
+  {vsn, git},
+  {modules, [
+    riak_utils
+  ]}
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+                  jsx
+                 ]},
+  {env, []}
+ ]}.
