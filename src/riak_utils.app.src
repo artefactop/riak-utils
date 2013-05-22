@@ -4,7 +4,7 @@
   {vsn, git},
   {modules, [
     riak_utils
-  ]}
+  ]},
   {registered, []},
   {applications, [
                   kernel,
