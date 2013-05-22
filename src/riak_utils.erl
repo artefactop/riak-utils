@@ -4,7 +4,7 @@
     dict_to_json/1,
     json_to_dict/1,
     date_to_integer_iso8601/1,
-    datetime_to_integer_iso8601/1,
+    datetime_to_integer_iso8601/1
 ]).
 
 dict_to_json(Dict) when is_tuple(Dict) ->
