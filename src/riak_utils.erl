@@ -13,7 +13,7 @@ dict_to_json(Dict) when is_tuple(Dict) ->
 json_to_dict(Json) when is_binary(Json) ->
     dict:from_list(jsx:decode(Json)).
 
-date_to_integer_iso8601({date,{Y,M,D}}) ->
+date_to_integer_iso8601({Y,M,D}) ->
     Y * 10000000000 + M * 100000000 + D * 1000000.
 
 datetime_to_integer_iso8601({datetime,{{Y,M,D},{H,Min,S}}}) ->
