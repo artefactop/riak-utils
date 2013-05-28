@@ -31,5 +31,7 @@ datetime_to_integer_iso8601({{Y,M,D},{H,Min,S}}) ->
 copy_metadata(undefined, Destination) ->
 	Destination;
 copy_metadata(Origin, Destination) ->
-	MD = riakc_obj:get_update_metadata(Origin),
-	riakc_obj:update_metadata(Destination, MD).
+	UMD = riakc_obj:get_update_metadata(Origin),
+    MD = riakc_obj:get_metadata(Origin),
+    NMD = dict:merge(fun(_K, _V1, V2) -> V2 end, MD, UMD),
+	riakc_obj:update_metadata(Destination, NMD).
