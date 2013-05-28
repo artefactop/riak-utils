@@ -22,6 +22,8 @@ date_to_integer_iso8601({Y,M,D}) ->
 -spec datetime_to_integer_iso8601(Datetime::calendar:datetime()) -> non_neg_integer().
 
 datetime_to_integer_iso8601({datetime, {{Y,M,D},{H,Min,S}}}) ->
+    datetime_to_integer_iso8601({{Y,M,D},{H,Min,S}});
+datetime_to_integer_iso8601({{Y,M,D},{H,Min,S}}) ->
     Y * 10000000000 + M * 100000000 + D * 1000000 + H * 10000 + Min * 100 + S.
 
 -spec copy_metadata(Origin::riakc:riak_obj(), Destination::riakc:riak_obj()) -> riakc:riak_obj().
